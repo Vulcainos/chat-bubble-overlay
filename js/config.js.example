@@ -11,6 +11,8 @@ const CONFIG = {
     backgroundColor: "#cde3ff",
     // rondeur de bordure, plus la valeur est élevée, plus la rondeur est intense
     borderRadius: "50px",
+    // Épaisseur de la bordure, plus la valeur est élevée, plus la bordure est épaisse : 0px pour aucune bordure
+    borderWidth: "2px",
     // taille de la police
     fontSize: "18px",
   },
@@ -23,6 +25,10 @@ const CONFIG = {
 
     // position d'apparition du chat, accepte seulement deux valeurs : "haut" | "bas"
     apparition: "bas",
+    // position des bulles de chat, accepte seulement trois valeurs : "gauche" | "droite" | "centre"
+    position: "gauche",
+    // fleche de parole, accepte seulement trois valeurs : "gauche" | "droite" | "none" 
+    arrow: "gauche",
 
     // delais en ms avant qu'un message disparait
     // si vous mettez -1, le message ne disparaitra jamais

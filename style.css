@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  padding: 0px 16px;
 }
 
 .bubble {
@@ -20,10 +21,48 @@ body {
   word-break: break-word;
   overflow-wrap: anywhere;
   white-space: pre-wrap;
-  overflow: hidden;
+  overflow: inherit;
   max-width: 100%;
 
   animation: pop 0.3s;
+
+  background-color: var(--bubble-color, rgba(0, 0, 0, 0.8));
+  color: var(--text-color, white);
+  border-color: var(--text-color, white);
+  border-radius: var(--border-radius, 12px);
+  font-size: var(--font-size, 18px);
+  border-width: var(--border-width, 0px);
+  border-style: solid;
+}
+
+.bubble-tail-left {
+  position: relative;
+}
+
+.bubble-tail-left::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: calc(50% - 6px); /* Pourquoi le 6px ? Et bien ça rend bien écoutez */
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right: 10px solid var(--bubble-color);
+}
+
+.bubble-tail-right {
+  position: relative;
+}
+
+.bubble-tail-right::before {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: calc(50% - 6px); /* Pourquoi le 6px ? Et bien ça rend bien écoutez */
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left: 10px solid var(--bubble-color);
 }
 
 .bubble-out {
