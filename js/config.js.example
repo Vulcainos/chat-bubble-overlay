@@ -9,7 +9,7 @@ const CONFIG = {
     textColor: "#2061B6",
     // couleur du fond des bulles de chat
     backgroundColor: "#cde3ff",
-    // rondeur de bordure, plus la valeur est elevée, plus la rondeur est intense
+    // rondeur de bordure, plus la valeur est élevée, plus la rondeur est intense
     borderRadius: "50px",
     // taille de la police
     fontSize: "18px",
