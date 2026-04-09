@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding: 0px calc((var(--font-size)/2) + 2px);
+  padding: 0px var(--font-size);
 }
 
 .bubble {
@@ -38,33 +38,54 @@ body {
 .bubble-tail-left {
   position: relative;
 }
-
 .bubble-tail-left::before {
   content: "";
   position: absolute;
-  left: calc((var(--font-size)*-2) + var(--border-width));
-  top: calc(50% - (var(--font-size)/2)); 
-  width: 0;
-  height: 0;
-  border: 8px solid transparent;
-  border-right: 10px solid var(--bubble-color);
-  border-width:  calc(var(--font-size)/2) var(--font-size);
+  left: calc(var(--font-size) * -1);
+  top: 50%;
+  width: calc(var(--font-size));
+  height: calc(var(--font-size));
+  transform: translateY(-50%);
+  background: var(--text-color);
+  clip-path: polygon(100% 0, 0% 50%, 100% 100%);
+}
+.bubble-tail-left::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--font-size) * -1 + var(--border-width) * 2);
+  top: 50%;
+  width: calc((var(--font-size)) - var(--border-width));
+  height: calc((var(--font-size)) - var(--border-width));
+  transform: translateY(-50%);
+  background: var(--bubble-color);
+  clip-path: polygon(100% 0, 0% 50%, 100% 100%);
 }
 
 .bubble-tail-right {
   position: relative;
 }
-
 .bubble-tail-right::before {
   content: "";
   position: absolute;
-  right: calc((var(--font-size)*-2) + var(--border-width));
-  top: calc(50% - (var(--font-size)/2)); 
-  width: 0;
-  height: 0;
-  border: 8px solid transparent;
-  border-left: 10px solid var(--bubble-color);
-  border-width:  calc(var(--font-size)/2) var(--font-size);
+  right: calc(var(--font-size) * -1);
+  top: 50%;
+  width: calc(var(--font-size));
+  height: calc(var(--font-size));
+  transform: translateY(-50%);
+  background: var(--text-color);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.bubble-tail-right::after {
+  content: "";
+  position: absolute;
+  right: calc(var(--font-size) * -1 + var(--border-width) * 2);
+  top: 50%;
+  width: calc((var(--font-size)) - var(--border-width));
+  height: calc((var(--font-size)) - var(--border-width));
+  transform: translateY(-50%);
+  background: var(--bubble-color);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
 .bubble-out {
