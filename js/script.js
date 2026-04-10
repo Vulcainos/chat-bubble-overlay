@@ -72,19 +72,13 @@ client.on("message", (channel, tags, message, self) => {
   const bubble = document.createElement("div");
   bubble.className = "bubble";
 
-  if (CONFIG.chat.position == "droite") {
-    bubble.style.alignSelf = "flex-end";
-  } else if (CONFIG.chat.position == "centre") {
-    bubble.style.alignSelf = "center";
-  } else {
-    bubble.style.alignSelf = "flex-start";
-  }
 
-  if (CONFIG.chat.arrow == "gauche") { // Oui théoriquement qu'on écrive "none" ou "fromage" ça change rien
-    bubble.classList.add("bubble-tail-left");
-  } else if (CONFIG.chat.arrow == "droite") {
-    bubble.classList.add("bubble-tail-right");
-  }
+  bubble.setAttribute("data-position", CONFIG.chat.position);
+
+  if (CONFIG.chat.arrow)
+    bubble.setAttribute("data-arrow-direction", CONFIG.chat.arrow);
+
+  
   bubble.appendChild(parseMessage(message, tags.emotes));
   chatContainer.appendChild(bubble);
 
